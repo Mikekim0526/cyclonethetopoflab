@@ -10,8 +10,6 @@
 #define EN1 3
 #define EN2 4
 #define WTP 5
-#define EN3 8
-#define EN4 9
 
 #define pumpPower 150
 #define potWTP A3
@@ -56,8 +54,6 @@ void setup() {
 
   digitalWrite(EN1, HIGH);
   digitalWrite(EN2, LOW);
-  digitalWrite(EN3, HIGH);
-  digitalWrite(EN4, HIGH);
   analogWrite(WTP, pumpPower);
   
   Serial.begin(9600);
@@ -68,7 +64,7 @@ void setup() {
 
 void loop() {
 
-  time_ = micros();
+  time_ = millis();
   loopDelay += 1;
   
   wtd = analogRead(potWTP)/2;
@@ -76,8 +72,10 @@ void loop() {
 
   if (Serial.available()) {
     inputNum = Serial.read() - '0';
+    inputNum = 38+inputNum;
     Serial.println(inputNum);
   }
+
   
   if(time_ % inputNum == 0)
   {
@@ -91,6 +89,8 @@ void loop() {
     analogWrite(GREEN_PIN, 0);
     analogWrite(BLUE_PIN, 0);
   }
+ 
+//      analogWrite(GREEN_PIN, 255);
 
   if(loopDelay >= wtd)
   {
@@ -106,6 +106,8 @@ void loop() {
 
     loopDelay = 0;
   }
+
+  
   //Serial.println(anal);
   //Serial.println(analogRead(potWTP));
   
