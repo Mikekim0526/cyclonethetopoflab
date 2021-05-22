@@ -1,9 +1,11 @@
 #define EN1 3
 #define EN2 4
 #define WTP 5
-
-#define pumpPower 150
 #define potWTP A3
+// digital output pins to control waterpump motor,
+// analog input pin for potentiometer to control waterpump power
+
+#define pumpPower 150           // default power of waterpump motor, you can change this value
 
 void setup() {
   Serial.begin(9600);
