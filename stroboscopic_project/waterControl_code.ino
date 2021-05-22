@@ -2,7 +2,6 @@
 #define EN2 4
 #define WTP 5
 
-int speed_ctl = 120;
 #define pumpPower 150
 #define potWTP A3
 
