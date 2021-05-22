@@ -10,6 +10,8 @@
 #define EN1 3
 #define EN2 4
 #define WTP 5
+#define EN3 8
+#define EN4 9
 
 #define pumpPower 150
 #define potWTP A3
@@ -54,6 +56,8 @@ void setup() {
 
   digitalWrite(EN1, HIGH);
   digitalWrite(EN2, LOW);
+  digitalWrite(EN3, HIGH);
+  digitalWrite(EN4, LOW);
   analogWrite(WTP, pumpPower);
   
   Serial.begin(9600);
