@@ -57,7 +57,7 @@ void setup() {
   digitalWrite(EN1, HIGH);
   digitalWrite(EN2, LOW);
   digitalWrite(EN3, HIGH);
-  digitalWrite(EN4, LOW);
+  digitalWrite(EN4, HIGH);
   analogWrite(WTP, pumpPower);
   
   Serial.begin(9600);
